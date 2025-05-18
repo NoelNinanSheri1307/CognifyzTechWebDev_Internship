@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time-Based Greeting</title>
+  <style>
+    * {
+      font-family: 'Footlight MT Light', sans-serif;
+    }
+
+    body {
+      text-align: center;
+      margin-top: 100px;
+      background-color: #f0f8ff;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #17a2b8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click to Get Greeted!</h2>
+  <button onclick="showGreeting()">Greet Me</button>
+
+  <script>
+    function showGreeting() {
+      const now = new Date();
+      const hour = now.getHours();
+      const minutes = now.getMinutes().toString().padStart(2, '0');
+      const seconds = now.getSeconds().toString().padStart(2, '0');
+      const timeString = `${hour}:${minutes}:${seconds}`;
+
+      let greeting = "Hello, Noel!";
+
+      if (hour < 12) {
+        greeting = "Good morning, Noel!";
+      } else if (hour < 18) {
+        greeting = "Good afternoon, Noel!";
+      } else {
+        greeting = "Good evening, Noel!";
+      }
+
+      alert(`${greeting}\nCurrent Time: ${timeString}`);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Color Change Button</title>
+  <style>
+    *
+    {
+        font-family:Footlight MT Light;
+    }
+    body {
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    #colorButton {
+      padding: 15px 30px;
+      font-size: 18px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #colorButton.clicked {
+      background-color: #28a745;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Click the Button to Change Color</h2>
+  <button id="colorButton" onclick="changeColor()">Click Me</button>
+
+  <script>
+    function changeColor() {
+      const button = document.getElementById('colorButton');
+      button.classList.toggle('clicked');
+    }
+  </script>
+
+</body>
+</html>
